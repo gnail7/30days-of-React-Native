@@ -7,12 +7,14 @@ import * as ImagePicker from 'expo-image-picker'
 import IconButton from '../../components/IconButton'
 import EmojiPicker from '../../components/EmojiPicker'
 import EmojiList from '../../components/EmojiList'
+import EmojiSticker from '../components/EmojiSticker'
 
 export default function Page3() {
   const DefaultImage = 'https://docs.expo.dev/static/images/tutorial/background-image.png'
   const [slectedImage, setSlectedImage] = useState(DefaultImage)
   const [showOptions, setShowOptions] = useState(false)
   const [isModalVisible, setIsModalVisible] = useState(false)
+  const [pickedEmoji, setPickedIcon] = useState([])
 
   const pickImage = async (select = true) => {
     if (!select) {
@@ -61,6 +63,8 @@ export default function Page3() {
           style={styles.image}
           source={{uri: slectedImage}}
         />
+        { pickedEmoji && <EmojiSticker  imageSize={40} stickerSource={pickedEmoji.icon} />}
+
       </View> 
       { showOptions ? 
         (
