@@ -1,0 +1,8 @@
+{
+  "files": ["src/**/*.{ts,tsx,js,jsx}"],
+  "importMap": {
+    "react": "React",
+    "lodash": "_"
+  },
+  "ignore": ["**/test/**/*", "**/node_modules/**/*"]
+}
